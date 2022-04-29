@@ -2,15 +2,15 @@
   <div class="formContainer">
     <div class="username">
       <h2>Username:</h2>
-      <input type="text">
+      <input type="text" id="username" #usernameInput (keyup)="inputUsername(usernameInput.value)">
     </div>
     <div class="password">
       <h2>Password:</h2>
-      <input type="text">
+      <input type="text"  id="password" #passwordInput (keyup)="inputPassword(passwordInput.value)">
     </div>
   </div>
   <div class="buttonContainer">
-    <button>Login</button>
+    <button (click)="loginPressed()">Login</button>
     <button routerLink="/register">Register</button>
   </div>
 </div>

@@ -1,0 +1,11 @@
+.navBar{
+  width: 100%;
+  height: 64px;
+  border: 1px solid red;
+}
+.routingContainer{
+  margin-top: 20px;
+  width: 100%;
+  height: 700px;
+  border: 1px solid red;
+}

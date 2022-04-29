@@ -17,24 +17,22 @@ export class LoginComponent implements OnInit {
   constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
+    this.getAccounts();
   }
 
   loginPressed(): void{
     this.getAccounts();
-    if(this.doesUserExist()){
-      alert("loged in successfully");
+
+    for(let i=0; i<this.accountList.length;i++){
+      if(this.username == this.accountList[i].username && this.password == this.accountList[i].password){
+        console.log(`${this.username} logged in`);
+      }
     }
-    else{
-      alert("something went wrong");
-    }
+
+
   }
   doesUserExist(): boolean{
-    for(let i=0; i<this.accountList.length; i++){
-      if((this.username === this.accountList[i].username) &&
-       (this.password === this.accountList[i].password)){
-          return true;
-       }
-    }
+
     return false;
   }
 

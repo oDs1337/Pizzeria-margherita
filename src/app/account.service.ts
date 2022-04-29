@@ -13,5 +13,8 @@ export class AccountService {
   getAccounts(): Observable<Account[]>{
     return of(ACCOUNTS);
   }
+  addAccount(username: string, password: string){
+    ACCOUNTS.push({username,password});
+  }
 
 }

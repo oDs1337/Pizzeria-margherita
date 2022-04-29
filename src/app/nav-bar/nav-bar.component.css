@@ -1,0 +1,13 @@
+.buttonsOfChoice{
+  width: 700px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginButton{
+  margin-right: 100px;
+}
+.registerButton{
+  margin-right: 100px;
+}

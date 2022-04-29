@@ -23,13 +23,4 @@
   height: 64px;
   border: 1px solid red;
   margin-left: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.loginButton{
-  margin-right: 100px;
-}
-.registerButton{
-  margin-right: 100px;
 }

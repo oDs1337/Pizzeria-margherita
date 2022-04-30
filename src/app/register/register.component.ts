@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from './../account.service';
+import { Account } from '../account';
 
 @Component({
   selector: 'app-register',
@@ -16,15 +17,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  registerPressed(){
+  submitPressed(value: Account){
     this.accountService.addAccount(this.username,this.password);
-  }
-
-  inputUsername(value: string){
-    this.username = value;
-  }
-  inputPassword(value: string){
-    this.password = value;
   }
 
 }

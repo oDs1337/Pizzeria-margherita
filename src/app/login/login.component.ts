@@ -1,7 +1,6 @@
 import { AccountService } from './../account.service';
 import { Component, OnInit } from '@angular/core';
 import { Account } from '../account';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +26,7 @@ export class LoginComponent implements OnInit {
         .subscribe(accounts => this.accountList = accounts);
   }
 
-  submitPressed(value: any){
+  submitPressed(value: Account){
     this.username = value.username;
     this.password = value.password;
     this.getAccounts();

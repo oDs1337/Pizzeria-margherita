@@ -8,4 +8,7 @@
   <div class="orderButton">
     <button routerLink="/order">Order</button>
   </div>
+  <div class="logOutButton" *ngIf="accountService.isLoggedIn">
+    <button (click)="logOutUser()">Log Out</button>
+  </div>
 </div>

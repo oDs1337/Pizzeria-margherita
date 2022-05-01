@@ -9,37 +9,17 @@ import { Account } from '../account';
 })
 export class LoginComponent implements OnInit {
 
-  accountList: Account[] = [];
-  username: string = "";
-  password: string = "";
-  loggedSession: boolean = false;
-
-
   constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
-    this.getAccounts();
-  }
-
-  getAccounts(): void{
-    this.accountService.getAccounts()
-        .subscribe(accounts => this.accountList = accounts);
   }
 
   submitPressed(value: Account){
-    this.username = value.username;
-    this.password = value.password;
-    this.getAccounts();
-    this.doesUserExist();
-    console.log(this.loggedSession);
+    this.accountService.loginUser(value);
   }
 
-  doesUserExist(){
-    for(let i=0;i<this.accountList.length;i++){
-      if((this.username === this.accountList[i].username) && (this.password === this.accountList[i].password)){
-        this.loggedSession = true;
-      }
-    }
+  logOutUser(){
+    this.accountService.logOutUser();
   }
 
 }

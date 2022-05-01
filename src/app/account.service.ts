@@ -2,19 +2,46 @@ import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Account } from './account';
 import { ACCOUNTS } from './mock-account';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  constructor() { }
+  #accountList: Account[] = [];
+  #isLoggedIn = false;
 
-  getAccounts(): Observable<Account[]>{
-    return of(ACCOUNTS);
+  constructor(private router: Router) {
+    this.getAccounts();
+  }
+
+  get isLoggedIn(){
+    return this.#isLoggedIn;
+  }
+
+  logOutUser(){
+    this.#isLoggedIn = false;
+    this.router.navigate(['login']);
+  }
+
+  getAccounts(): void{
+    this.#accountList = ACCOUNTS;
   }
   addAccount(username: string, password: string){
-    ACCOUNTS.push({username,password});
+    this.#accountList.push({username,password});
   }
+
+
+  loginUser({username, password}: Account){
+    this.#accountList.forEach(element => {
+      if((username === element.username) && (password === element.password)){
+        this.#isLoggedIn = true;
+        this.router.navigate(['order']);
+      }
+    });
+  }
+
+
 
 }

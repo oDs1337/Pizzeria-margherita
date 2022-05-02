@@ -3,6 +3,8 @@
   height: 64px;
   border: 1px solid red;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .routingContainer{
   margin-top: 20px;
@@ -13,14 +15,8 @@
   justify-content: center;
   align-items: center;
 }
-.logo{
-  width: 64px;
-  height: 64px;
-  border: 1px solid red;
-}
 .buttonsOfChoice{
   width: 700px;
   height: 64px;
   border: 1px solid red;
-  margin-left: 400px;
 }

@@ -1,5 +1,5 @@
 <div class="buttonsOfChoice">
-  <div class="loginButton">
+  <div class="loginButton" *ngIf="!accountService.isLoggedIn">
     <button routerLink="/login">Login</button>
   </div>
   <div class="registerButton">

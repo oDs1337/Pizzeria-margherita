@@ -1,4 +1,6 @@
+import { MenuService } from './../menu.service';
 import { Component, OnInit } from '@angular/core';
+import { Menu } from '../menu';
 
 @Component({
   selector: 'app-order',
@@ -7,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private menuService: MenuService) { }
+
+  menuList: Menu[] = [];
 
   ngOnInit(): void {
+    this.getMenu();
   }
 
+  getMenu(): void{
+    this.menuService.getMenu()
+        .subscribe(menu => this.menuList = menu);
+  }
 
 
 }

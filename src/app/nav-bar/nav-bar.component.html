@@ -2,13 +2,13 @@
   <div class="loginButton" *ngIf="!accountService.isLoggedIn">
     <button routerLink="/login">Login</button>
   </div>
+  <div class="loginButton" *ngIf="accountService.isLoggedIn">
+    <button (click)="logOutUser()">Log Out</button>
+  </div>
   <div class="registerButton">
     <button routerLink="/register">Register</button>
   </div>
   <div class="orderButton">
     <button routerLink="/order">Order</button>
-  </div>
-  <div class="logOutButton" *ngIf="accountService.isLoggedIn">
-    <button (click)="logOutUser()">Log Out</button>
   </div>
 </div>

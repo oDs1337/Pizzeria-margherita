@@ -1,31 +1,77 @@
-<div class="itemContainer">
-  <div class="menuNameLabel">
-    Pizza menu
-  </div>
-  <div class="menuContainer">
-    <div *ngFor="let item of menuList">
-      <div *ngIf="item.category === 'Pizza'">
-        <div class="specyficItemContainer">
-          <div class="firstHalfOfContainer">
-            <div class="itemCount">
-              {{item.count}}
-            </div>
-            <div class="itemName">
-              {{item.name}}
-            </div>
-          </div>
-          <div class="secondHalfOfContainer">
-            <div class="itemPrice">
-              {{item.price}}{{item.currency}}
-            </div>
-            <div class="countButtons">
-              <button>+</button>
-              <button>-</button>
-            </div>
-          </div>
-        </div>
+<div class="orderContainer">
+  <div class="itemContainer">
+    <div class="menuNameLabel">
+      Pizza menu
     </div>
+    <div class="menuContainer">
+      <div *ngFor="let item of menuList">
+        <div *ngIf="item.category === 'Pizza'">
+          <div class="specyficItemContainer">
+            <div class="firstHalfOfContainer">
+              <div class="itemCount">
+                {{item.count}}
+              </div>
+              <div class="itemName">
+                {{item.name}}
+              </div>
+            </div>
+            <div class="secondHalfOfContainer">
+              <div class="itemPrice">
+                {{item.price}}{{item.currency}}
+              </div>
+              <div class="countButtons">
+                <button>+</button>
+                <button>-</button>
+              </div>
+            </div>
+          </div>
+      </div>
 
+    </div>
+    </div>
   </div>
+  <div class="itemContainer">
+    <div class="menuNameLabel">
+      Beverage menu
+    </div>
+    <div class="menuContainer">
+      <div *ngFor="let item of menuList">
+        <div *ngIf="item.category === 'Beverage'">
+          <div class="specyficItemContainer">
+            <div class="firstHalfOfContainer">
+              <div class="itemCount">
+                {{item.count}}
+              </div>
+              <div class="itemName">
+                {{item.name}}
+              </div>
+            </div>
+            <div class="secondHalfOfContainer">
+              <div class="itemPrice">
+                {{item.price}}{{item.currency}}
+              </div>
+              <div class="countButtons">
+                <button>+</button>
+                <button>-</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+  <div class="orderCart">
+    <div class="orderItem">
+      <div class="orderCount">
+        1
+      </div>
+      <div class="orderName">
+        Margherita
+      </div>
+    </div>
+    <div class="orderButton">
+      <button>Order</button>
+    </div>
   </div>
 </div>

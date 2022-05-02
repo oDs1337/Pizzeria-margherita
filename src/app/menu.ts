@@ -1,6 +1,6 @@
 export interface Menu{
   name: string,
-  price: string,
+  price: number,
   currency: string,
   category: string,
   count: number,

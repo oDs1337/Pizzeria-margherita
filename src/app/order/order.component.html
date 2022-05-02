@@ -4,7 +4,7 @@
       Pizza menu
     </div>
     <div class="menuContainer">
-      <div *ngFor="let item of menuList">
+      <div *ngFor="let item of menuList; let i = index">
         <div *ngIf="item.category === 'Pizza'">
           <div class="specyficItemContainer">
             <div class="firstHalfOfContainer">
@@ -20,8 +20,8 @@
                 {{item.price}}{{item.currency}}
               </div>
               <div class="countButtons">
-                <button>+</button>
-                <button>-</button>
+                <button [disabled]="item.count>=maxCount" (click)="incrementCount(i)">+</button>
+                <button [disabled]="item.count<=minCount" (click)="decrementCount(i)">-</button>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
       Beverage menu
     </div>
     <div class="menuContainer">
-      <div *ngFor="let item of menuList">
+      <div *ngFor="let item of menuList; let i = index">
         <div *ngIf="item.category === 'Beverage'">
           <div class="specyficItemContainer">
             <div class="firstHalfOfContainer">
@@ -51,8 +51,8 @@
                 {{item.price}}{{item.currency}}
               </div>
               <div class="countButtons">
-                <button>+</button>
-                <button>-</button>
+                <button [disabled]="item.count>=maxCount" (click)="incrementCount(i)">+</button>
+                <button [disabled]="item.count<=minCount" (click)="decrementCount(i)">-</button>
               </div>
             </div>
           </div>
@@ -62,16 +62,25 @@
     </div>
   </div>
   <div class="orderCart">
-    <div class="orderItem">
-      <div class="orderCount">
-        1
-      </div>
-      <div class="orderName">
-        Margherita
+    <div *ngFor="let order of menuList">
+      <div *ngIf="order.count>0">
+        <div class="orderItem">
+          <div class="orderCount">
+            {{order.count}}
+          </div>
+          <div class="orderName">
+            {{order.name}}
+          </div>
+        </div>
       </div>
     </div>
-    <div class="orderButton">
-      <button>Order</button>
+    <div class="orderInfo">
+      <div class="orderSum">
+        {{orderValue}}{{orderCurrency}}
+      </div>
+      <div class="orderButton">
+        <button>Order</button>
+      </div>
     </div>
   </div>
 </div>

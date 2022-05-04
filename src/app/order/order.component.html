@@ -62,14 +62,16 @@
     </div>
   </div>
   <div class="orderCart">
-    <div *ngFor="let order of menuList">
-      <div *ngIf="order.count>0">
-        <div class="orderItem">
-          <div class="orderCount">
-            {{order.count}}
-          </div>
-          <div class="orderName">
-            {{order.name}}
+    <div class="orderList">
+      <div *ngFor="let order of menuList">
+        <div *ngIf="order.count>0">
+          <div class="orderItem">
+            <div class="orderCount">
+              {{order.count}}
+            </div>
+            <div class="orderName">
+              {{order.name}}
+            </div>
           </div>
         </div>
       </div>

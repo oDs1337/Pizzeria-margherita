@@ -9,14 +9,11 @@
 .orderCart{
   width: 150px;
   height: 400px;
-  display: flex;
-  flex-direction: column;
   border: 1px solid red;
 }
 .itemContainer{
   width: 600px;
   height: 400px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,11 +69,17 @@
   align-items: center;
   border: 1px solid red;
 }
+.orderList{
+  height: 350px;
+  width: 150px;
+  border: 1px solid red;
+}
 .orderInfo{
   width: 150px;
   height: 50px;
   display: flex;
   align-items: center;
+  align-self: flex-end;
   border: 1px solid red;
 }
 .orderCount{
